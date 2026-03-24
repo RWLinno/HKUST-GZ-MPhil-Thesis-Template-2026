@@ -1,48 +1,127 @@
 \documentclass[a4paper]{ustthesis}
+
+% =============================================
+% Packages — do NOT remove; they affect layout
+% =============================================
 \usepackage[square,numbers]{natbib}
 \usepackage{xeCJK}
 \usepackage[T1]{fontenc}
+\usepackage{longtable}
+\usepackage{url}
+\usepackage{multirow}
+\usepackage{graphics}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{url}
+\usepackage{cases}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{pifont}
+\usepackage{array}
+%\usepackage{hyperref}
+\usepackage{pdflscape}
+\usepackage{subfig}
+\DeclareMathOperator*{\argmax}{argmax}
 \setCJKmainfont{AR PL UMing HK}
 
-% =========================
-% Metadata (fill this part)
-% =========================
+\usepackage{diagbox}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{epsfig}
+\usepackage{amssymb}
+\usepackage{tabularx}
+\usepackage{dsfont}
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{threeparttable}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{subcaption}
+
+\newcommand{\sign}{\text{sign}}
+\newtheorem{myDef}{Definition}
+\newtheorem{myAss}{Assumption}
+\newtheorem{myTheo}{Theorem}
+\newtheorem{myexam}{Example}
+\newtheorem{proposition}{Proposition}
+\newtheorem{proof}{Proof}
+
+\makeatletter
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+
+\newcommand{\etal}{\emph{et~al.}\xspace}
+\newcommand{\eg}{\emph{e.g.},\xspace}
+\newcommand{\ie}{\emph{i.e.},\xspace}
+\newcommand{\wrt}{\emph{w.r.t.}\xspace}
+\newcommand{\aka}{\emph{a.k.a.}\xspace}
+\newcommand{\etc}{\emph{etc.}\xspace}
+\newcommand{\cf}{cf.\/~}
+\newcommand\figref[1]{Figure~\ref{#1}}
+\newcommand\algoref[1]{Algorithm~\ref{#1}}
+\newcommand\tabref[1]{Table~\ref{#1}}
+\newcommand\secref[1]{Section~\ref{#1}}
+\newcommand\equref[1]{Eq.~(\ref{#1})}
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+
+\newtheorem{pro}{Problem}
+\newcommand{\eat}[1]{}
+\newcommand{\TODO}[1]{{\color{red}TODO:{#1}}}
+
+% ==========================================================
+% Metadata — fill in your own information before compilation
+% ==========================================================
 \title{Your Thesis Title}
 \author{Your Name}
 \degree{\MPhil}             % \AM \MSc \MPhil \PhD
 \stage{\Thesis}             % \PQE \Proposal \Thesis
-\subject{Your Subject}
-\department{Your Department}
+\subject{[Full Name of Your Thrust]}
+\department{Full Name of Your Thrust}
 \thesisabstractfile{00III_abstract.tex}
 \advisor{Prof. Your Advisor Name}
 % \member{Prof. Your Co-Supervisor Name, Thesis Co-Supervisor}
-\depthead{Prof. Department Head Name}
+\depthead{Prof. Your Thrust Head Name}
 \defencedate{2026}{3}{23}   % 你的答辩日期：\defencedate{year}{month}{day}
 
+% NOTE:
+%   According to the sample shown in the guidelines, page number is
+%   placed below the bottom margin.  However, if the author prefers
+%   the page number to be printed above the bottom margin, please
+%   activate the following command.
 \PNumberAboveBottomMargin
 
 \begin{document}
 \maketitle
 
-% Optional dedication page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     DEDICATION (Optional)                                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \dedication
 % \input{00I_dedication.tex}
 % \enddedication
 % \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     ACKNOWLEDGMENTS                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \acknowledgments
 \input{00II_acknowledgments.tex}
 \endacknowledgments
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TABLE OF CONTENTS                                                 %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \tableofcontents
 
 % If your thesis has figures/tables, uncomment these:
 % \listoffigures
 % \listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     CHAPTERS                                                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Introduction}
 \label{chp_intro}
@@ -70,12 +149,18 @@
 \input{text/chapter06_conclusion}
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     APPENDIX (Optional)                                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
 \chapter{Publications (Optional)}
 \label{appx:publications}
 \input{00IV_publications.tex}
 \newpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     BIBLIOGRAPHY                                                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{IEEEtran}
 \bibliography{references}

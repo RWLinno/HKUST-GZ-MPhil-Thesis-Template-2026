@@ -22,14 +22,15 @@ This repository is intentionally anonymized and contains **no personal thesis co
 3. Replace metadata placeholders:
    - `Your Thesis Title`
    - `Your Name`
-   - `Your Subject`
-   - `Your Department`
-   - advisor / defense date comments
+   - `[Full Name of Your Thrust]` (subject & department)
+   - advisor / thrust head / defense date
 4. Replace chapter placeholder text in `text/*.tex`.
 5. Add your own references to `references.bib`.
-6. Compile with XeLaTeX + BibTeX.
+6. **Compile with XeLaTeX + BibTeX** (XeLaTeX is required for CJK font support).
 
-## Recommended Compile Commands
+## Compile Commands (XeLaTeX Required)
+
+> **Important:** This template **must** be compiled with **XeLaTeX** (not pdfLaTeX) due to the `xeCJK` package for Chinese font support.
 
 ```bash
 xelatex 000_thesis.tex
