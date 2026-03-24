@@ -1,0 +1,83 @@
+\documentclass[a4paper]{ustthesis}
+\usepackage[square,numbers]{natbib}
+\usepackage{xeCJK}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{url}
+\setCJKmainfont{AR PL UMing HK}
+
+% =========================
+% Metadata (fill this part)
+% =========================
+\title{Your Thesis Title}
+\author{Your Name}
+\degree{\MPhil}             % \AM \MSc \MPhil \PhD
+\stage{\Thesis}             % \PQE \Proposal \Thesis
+\subject{Your Subject}
+\department{Your Department}
+\thesisabstractfile{00III_abstract.tex}
+\advisor{Prof. Your Advisor Name}
+% \member{Prof. Your Co-Supervisor Name, Thesis Co-Supervisor}
+\depthead{Prof. Department Head Name}
+\defencedate{2026}{3}{23}   % 你的答辩日期：\defencedate{year}{month}{day}
+
+\PNumberAboveBottomMargin
+
+\begin{document}
+\maketitle
+
+% Optional dedication page
+% \dedication
+% \input{00I_dedication.tex}
+% \enddedication
+% \newpage
+
+\acknowledgments
+\input{00II_acknowledgments.tex}
+\endacknowledgments
+\newpage
+
+\tableofcontents
+
+% If your thesis has figures/tables, uncomment these:
+% \listoffigures
+% \listoftables
+
+\chapter{Introduction}
+\label{chp_intro}
+\input{text/chapter01_introduction}
+\newpage
+
+\chapter{Literature Review}
+\label{chp_review}
+\input{text/chapter02_literature_review}
+\newpage
+
+\chapter{Methodology}
+\label{chp_method}
+\input{text/chapter03_methodology}
+\newpage
+
+\chapter{Experiments and Analysis}
+\label{chp_exp}
+\input{text/chapter04_experiments}
+\input{text/chapter05_discussion}
+\newpage
+
+\chapter{Conclusion and Future Work}
+\label{chp_conclusion}
+\input{text/chapter06_conclusion}
+\newpage
+
+\appendix
+\chapter{Publications (Optional)}
+\label{appx:publications}
+\input{00IV_publications.tex}
+\newpage
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
