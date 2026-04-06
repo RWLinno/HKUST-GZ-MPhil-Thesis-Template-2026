@@ -1866,7 +1866,7 @@ scholarly research.}
       }
  %   }
     \par
-    {\normalsize \@department\space Thrust\par}
+    {\normalsize \@subject\space Thrust\par}
 %    \vglue 3ex plus 1fill
     {\normalsize \today\par}
 %   {\normalsize Date:\hfill\rule[-.4ex]{2.35in}{.5pt}}
